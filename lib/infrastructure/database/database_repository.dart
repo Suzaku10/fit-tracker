@@ -12,7 +12,7 @@ class DatabaseRepository implements IDatabaseRepository {
   @override
   Future<void> add({required Map<String, dynamic> value}) async {
     await _firestore.collection(AppConst.collection).add({
-      'weight': value['weight'] as int,
+      'weight': value['weight'] as num,
       'email': value['email'],
       'createAt': Timestamp.fromDate(DateTime.now()),
     });

@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eden_farm/application/database/home_bloc.dart';
+import 'package:eden_farm/domain/core/app/app_router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -26,9 +28,7 @@ class _HomePageState extends State<HomePage> {
             child: Scaffold(
               body: _bmi != null
                   ? FutureBuilder<QuerySnapshot>(
-                      future: _bmi!
-                          .orderBy('createAt', descending: true)
-                          .get(),
+                      future: _bmi!.orderBy('createAt', descending: true).get(),
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
                           return ListView.builder(
@@ -51,9 +51,14 @@ class _HomePageState extends State<HomePage> {
                     ),
               floatingActionButton: FloatingActionButton(
                   child: const Icon(Icons.add),
-                  onPressed: () => context.read<HomeBloc>().add(
-                        const HomeEvent.addItem(value: {}),
-                      )),
+                  onPressed: () async {
+                    await context.router.push(const AddRoute());
+                    setState(
+                      () => context.read<HomeBloc>().add(
+                            const HomeEvent.getCollection(),
+                          ),
+                    );
+                  }),
             ),
           );
         },
@@ -67,7 +72,6 @@ class _HomePageState extends State<HomePage> {
                   context.read<HomeBloc>().add(const HomeEvent.getCollection()),
               getEmailSuccess: (e) {
                 _email = e.email;
-                print('print => $_email');
                 context.read<HomeBloc>().add(const HomeEvent.getCollection());
               });
         },
@@ -76,7 +80,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _itemCard(Map<String, dynamic> data, String id, BuildContext context) {
-    print('print => dari daata ${data['email']}');
     return Card(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),

@@ -36,14 +36,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         addItem: (e) async {
           final user = await _auth.getCurrentUser();
           await _databaseRepository.add(value: {
-            'weight': 100,
+            'weight': e.value['weight'],
             'email': user?.email ?? '',
           });
           emit(const _AddSuccess());
         },
         getEmail: (e) async {
           final user = await _auth.getCurrentUser();
-          print('print => ${user?.email}');
           emit(_GetEmailSuccess(email: user?.email ?? ''));
         },
       );

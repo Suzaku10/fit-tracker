@@ -12,6 +12,7 @@ class AppTextField {
     bool? obscureText,
     bool isPassword = false,
     Function(bool)? showPassCallback,
+    bool isNumberOnly = false,
   }) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -23,6 +24,7 @@ class AppTextField {
             style: AppStyle.normal12,
           ),
           TextField(
+            keyboardType: isNumberOnly ? TextInputType.number : TextInputType.text,
             decoration: InputDecoration(
               hintText: hint,
               hintStyle: AppStyle.italic10,
