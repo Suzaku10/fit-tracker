@@ -1,7 +1,5 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:eden_farm/infrastructure/user/i_user_repository.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -16,7 +14,7 @@ part 'login_bloc.freezed.dart';
 
 @injectable
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  final FirebaseAuth _auth;
+  final IUserRepository _auth;
 
   LoginBloc(this._auth) : super(const _Initial()) {
     on<LoginEvent>((event, emit) async {
@@ -29,7 +27,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         },
         onLogin: (e) async {
           EasyLoading.show();
-          final login = await _login(
+          final login = await _auth.login(
             email: e.email,
             password: e.password,
           );
@@ -55,24 +53,5 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         },
       );
     });
-  }
-
-  Future<Map<String, dynamic>> _login({
-    required String email,
-    required String password,
-  }) async {
-    try {
-      final userCredential = await _auth.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-
-      return {AppConst.status: true, AppConst.data: userCredential};
-    } on FirebaseAuthException catch (e) {
-      final message = e.code.replaceAll("-", " ");
-      return {AppConst.status: false, AppConst.message: message};
-    } catch (e) {
-      return {AppConst.status: false};
-    }
   }
 }
