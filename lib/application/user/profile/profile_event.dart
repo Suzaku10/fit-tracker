@@ -1,4 +1,6 @@
 part of 'profile_bloc.dart';
 
-@immutable
-abstract class ProfileEvent {}
+@freezed
+class ProfileEvent with _$ProfileEvent {
+  const factory ProfileEvent.signOut() = _SignOut;
+}

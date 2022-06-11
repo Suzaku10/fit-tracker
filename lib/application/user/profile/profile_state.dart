@@ -1,6 +1,9 @@
 part of 'profile_bloc.dart';
 
-@immutable
-abstract class ProfileState {}
+@freezed
+class ProfileState with _$ProfileState {
+  const factory ProfileState.initial() = _Initial;
 
-class ProfileInitial extends ProfileState {}
+  const factory ProfileState.signOutSuccess({required bool isSuccess}) =
+      _SignoutSuccess;
+}
