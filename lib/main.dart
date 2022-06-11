@@ -1,6 +1,7 @@
 import 'package:eden_farm/domain/core/app/app_const.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:injectable/injectable.dart';
 
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
+      builder: EasyLoading.init(),
       localizationsDelegates: const [
         I10n.delegate,
         GlobalMaterialLocalizations.delegate,
