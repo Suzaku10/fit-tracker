@@ -16,42 +16,55 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeEvent {
-  String get value => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String value) getCollection,
+    required TResult Function(String id) deleteItem,
+    required TResult Function(Map<String, dynamic> value) addItem,
+    required TResult Function() getEmail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String value)? getCollection,
+    TResult Function(String id)? deleteItem,
+    TResult Function(Map<String, dynamic> value)? addItem,
+    TResult Function()? getEmail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? getCollection,
+    TResult Function(String id)? deleteItem,
+    TResult Function(Map<String, dynamic> value)? addItem,
+    TResult Function()? getEmail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetCollection value) getCollection,
+    required TResult Function(_DeleteItem value) deleteItem,
+    required TResult Function(_AddItem value) addItem,
+    required TResult Function(_GetEmail value) getEmail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetCollection value)? getCollection,
+    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_AddItem value)? addItem,
+    TResult Function(_GetEmail value)? getEmail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetCollection value)? getCollection,
+    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_AddItem value)? addItem,
+    TResult Function(_GetEmail value)? getEmail,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $HomeEventCopyWith<HomeEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -59,7 +72,6 @@ mixin _$HomeEvent {
 abstract class $HomeEventCopyWith<$Res> {
   factory $HomeEventCopyWith(HomeEvent value, $Res Function(HomeEvent) then) =
       _$HomeEventCopyWithImpl<$Res>;
-  $Res call({String value});
 }
 
 /// @nodoc
@@ -69,27 +81,13 @@ class _$HomeEventCopyWithImpl<$Res> implements $HomeEventCopyWith<$Res> {
   final HomeEvent _value;
   // ignore: unused_field
   final $Res Function(HomeEvent) _then;
-
-  @override
-  $Res call({
-    Object? value = freezed,
-  }) {
-    return _then(_value.copyWith(
-      value: value == freezed
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class _$$_GetCollectionCopyWith<$Res>
-    implements $HomeEventCopyWith<$Res> {
+abstract class _$$_GetCollectionCopyWith<$Res> {
   factory _$$_GetCollectionCopyWith(
           _$_GetCollection value, $Res Function(_$_GetCollection) then) =
       __$$_GetCollectionCopyWithImpl<$Res>;
-  @override
   $Res call({String value});
 }
 
@@ -151,6 +149,9 @@ class _$_GetCollection implements _GetCollection {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String value) getCollection,
+    required TResult Function(String id) deleteItem,
+    required TResult Function(Map<String, dynamic> value) addItem,
+    required TResult Function() getEmail,
   }) {
     return getCollection(value);
   }
@@ -159,6 +160,9 @@ class _$_GetCollection implements _GetCollection {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String value)? getCollection,
+    TResult Function(String id)? deleteItem,
+    TResult Function(Map<String, dynamic> value)? addItem,
+    TResult Function()? getEmail,
   }) {
     return getCollection?.call(value);
   }
@@ -167,6 +171,9 @@ class _$_GetCollection implements _GetCollection {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? getCollection,
+    TResult Function(String id)? deleteItem,
+    TResult Function(Map<String, dynamic> value)? addItem,
+    TResult Function()? getEmail,
     required TResult orElse(),
   }) {
     if (getCollection != null) {
@@ -179,6 +186,9 @@ class _$_GetCollection implements _GetCollection {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetCollection value) getCollection,
+    required TResult Function(_DeleteItem value) deleteItem,
+    required TResult Function(_AddItem value) addItem,
+    required TResult Function(_GetEmail value) getEmail,
   }) {
     return getCollection(this);
   }
@@ -187,6 +197,9 @@ class _$_GetCollection implements _GetCollection {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetCollection value)? getCollection,
+    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_AddItem value)? addItem,
+    TResult Function(_GetEmail value)? getEmail,
   }) {
     return getCollection?.call(this);
   }
@@ -195,6 +208,9 @@ class _$_GetCollection implements _GetCollection {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetCollection value)? getCollection,
+    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_AddItem value)? addItem,
+    TResult Function(_GetEmail value)? getEmail,
     required TResult orElse(),
   }) {
     if (getCollection != null) {
@@ -207,12 +223,421 @@ class _$_GetCollection implements _GetCollection {
 abstract class _GetCollection implements HomeEvent {
   const factory _GetCollection({final String value}) = _$_GetCollection;
 
-  @override
   String get value => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$_GetCollectionCopyWith<_$_GetCollection> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_DeleteItemCopyWith<$Res> {
+  factory _$$_DeleteItemCopyWith(
+          _$_DeleteItem value, $Res Function(_$_DeleteItem) then) =
+      __$$_DeleteItemCopyWithImpl<$Res>;
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$_DeleteItemCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
+    implements _$$_DeleteItemCopyWith<$Res> {
+  __$$_DeleteItemCopyWithImpl(
+      _$_DeleteItem _value, $Res Function(_$_DeleteItem) _then)
+      : super(_value, (v) => _then(v as _$_DeleteItem));
+
+  @override
+  _$_DeleteItem get _value => super._value as _$_DeleteItem;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(_$_DeleteItem(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_DeleteItem implements _DeleteItem {
+  const _$_DeleteItem({required this.id});
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'HomeEvent.deleteItem(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_DeleteItem &&
+            const DeepCollectionEquality().equals(other.id, id));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_DeleteItemCopyWith<_$_DeleteItem> get copyWith =>
+      __$$_DeleteItemCopyWithImpl<_$_DeleteItem>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) getCollection,
+    required TResult Function(String id) deleteItem,
+    required TResult Function(Map<String, dynamic> value) addItem,
+    required TResult Function() getEmail,
+  }) {
+    return deleteItem(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String value)? getCollection,
+    TResult Function(String id)? deleteItem,
+    TResult Function(Map<String, dynamic> value)? addItem,
+    TResult Function()? getEmail,
+  }) {
+    return deleteItem?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? getCollection,
+    TResult Function(String id)? deleteItem,
+    TResult Function(Map<String, dynamic> value)? addItem,
+    TResult Function()? getEmail,
+    required TResult orElse(),
+  }) {
+    if (deleteItem != null) {
+      return deleteItem(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetCollection value) getCollection,
+    required TResult Function(_DeleteItem value) deleteItem,
+    required TResult Function(_AddItem value) addItem,
+    required TResult Function(_GetEmail value) getEmail,
+  }) {
+    return deleteItem(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetCollection value)? getCollection,
+    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_AddItem value)? addItem,
+    TResult Function(_GetEmail value)? getEmail,
+  }) {
+    return deleteItem?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetCollection value)? getCollection,
+    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_AddItem value)? addItem,
+    TResult Function(_GetEmail value)? getEmail,
+    required TResult orElse(),
+  }) {
+    if (deleteItem != null) {
+      return deleteItem(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteItem implements HomeEvent {
+  const factory _DeleteItem({required final String id}) = _$_DeleteItem;
+
+  String get id => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_DeleteItemCopyWith<_$_DeleteItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_AddItemCopyWith<$Res> {
+  factory _$$_AddItemCopyWith(
+          _$_AddItem value, $Res Function(_$_AddItem) then) =
+      __$$_AddItemCopyWithImpl<$Res>;
+  $Res call({Map<String, dynamic> value});
+}
+
+/// @nodoc
+class __$$_AddItemCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
+    implements _$$_AddItemCopyWith<$Res> {
+  __$$_AddItemCopyWithImpl(_$_AddItem _value, $Res Function(_$_AddItem) _then)
+      : super(_value, (v) => _then(v as _$_AddItem));
+
+  @override
+  _$_AddItem get _value => super._value as _$_AddItem;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_$_AddItem(
+      value: value == freezed
+          ? _value._value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_AddItem implements _AddItem {
+  const _$_AddItem({required final Map<String, dynamic> value})
+      : _value = value;
+
+  final Map<String, dynamic> _value;
+  @override
+  Map<String, dynamic> get value {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_value);
+  }
+
+  @override
+  String toString() {
+    return 'HomeEvent.addItem(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_AddItem &&
+            const DeepCollectionEquality().equals(other._value, _value));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_value));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_AddItemCopyWith<_$_AddItem> get copyWith =>
+      __$$_AddItemCopyWithImpl<_$_AddItem>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) getCollection,
+    required TResult Function(String id) deleteItem,
+    required TResult Function(Map<String, dynamic> value) addItem,
+    required TResult Function() getEmail,
+  }) {
+    return addItem(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String value)? getCollection,
+    TResult Function(String id)? deleteItem,
+    TResult Function(Map<String, dynamic> value)? addItem,
+    TResult Function()? getEmail,
+  }) {
+    return addItem?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? getCollection,
+    TResult Function(String id)? deleteItem,
+    TResult Function(Map<String, dynamic> value)? addItem,
+    TResult Function()? getEmail,
+    required TResult orElse(),
+  }) {
+    if (addItem != null) {
+      return addItem(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetCollection value) getCollection,
+    required TResult Function(_DeleteItem value) deleteItem,
+    required TResult Function(_AddItem value) addItem,
+    required TResult Function(_GetEmail value) getEmail,
+  }) {
+    return addItem(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetCollection value)? getCollection,
+    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_AddItem value)? addItem,
+    TResult Function(_GetEmail value)? getEmail,
+  }) {
+    return addItem?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetCollection value)? getCollection,
+    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_AddItem value)? addItem,
+    TResult Function(_GetEmail value)? getEmail,
+    required TResult orElse(),
+  }) {
+    if (addItem != null) {
+      return addItem(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddItem implements HomeEvent {
+  const factory _AddItem({required final Map<String, dynamic> value}) =
+      _$_AddItem;
+
+  Map<String, dynamic> get value => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_AddItemCopyWith<_$_AddItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_GetEmailCopyWith<$Res> {
+  factory _$$_GetEmailCopyWith(
+          _$_GetEmail value, $Res Function(_$_GetEmail) then) =
+      __$$_GetEmailCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_GetEmailCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
+    implements _$$_GetEmailCopyWith<$Res> {
+  __$$_GetEmailCopyWithImpl(
+      _$_GetEmail _value, $Res Function(_$_GetEmail) _then)
+      : super(_value, (v) => _then(v as _$_GetEmail));
+
+  @override
+  _$_GetEmail get _value => super._value as _$_GetEmail;
+}
+
+/// @nodoc
+
+class _$_GetEmail implements _GetEmail {
+  const _$_GetEmail();
+
+  @override
+  String toString() {
+    return 'HomeEvent.getEmail()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_GetEmail);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) getCollection,
+    required TResult Function(String id) deleteItem,
+    required TResult Function(Map<String, dynamic> value) addItem,
+    required TResult Function() getEmail,
+  }) {
+    return getEmail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String value)? getCollection,
+    TResult Function(String id)? deleteItem,
+    TResult Function(Map<String, dynamic> value)? addItem,
+    TResult Function()? getEmail,
+  }) {
+    return getEmail?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? getCollection,
+    TResult Function(String id)? deleteItem,
+    TResult Function(Map<String, dynamic> value)? addItem,
+    TResult Function()? getEmail,
+    required TResult orElse(),
+  }) {
+    if (getEmail != null) {
+      return getEmail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetCollection value) getCollection,
+    required TResult Function(_DeleteItem value) deleteItem,
+    required TResult Function(_AddItem value) addItem,
+    required TResult Function(_GetEmail value) getEmail,
+  }) {
+    return getEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetCollection value)? getCollection,
+    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_AddItem value)? addItem,
+    TResult Function(_GetEmail value)? getEmail,
+  }) {
+    return getEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetCollection value)? getCollection,
+    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_AddItem value)? addItem,
+    TResult Function(_GetEmail value)? getEmail,
+    required TResult orElse(),
+  }) {
+    if (getEmail != null) {
+      return getEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetEmail implements HomeEvent {
+  const factory _GetEmail() = _$_GetEmail;
 }
 
 /// @nodoc
@@ -222,6 +647,9 @@ mixin _$HomeState {
     required TResult Function() initial,
     required TResult Function(CollectionReference<Object?> collectionReference)
         getCollectionSuccess,
+    required TResult Function() deleteSuccess,
+    required TResult Function() addSuccess,
+    required TResult Function(String email) getEmailSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -229,6 +657,9 @@ mixin _$HomeState {
     TResult Function()? initial,
     TResult Function(CollectionReference<Object?> collectionReference)?
         getCollectionSuccess,
+    TResult Function()? deleteSuccess,
+    TResult Function()? addSuccess,
+    TResult Function(String email)? getEmailSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -236,6 +667,9 @@ mixin _$HomeState {
     TResult Function()? initial,
     TResult Function(CollectionReference<Object?> collectionReference)?
         getCollectionSuccess,
+    TResult Function()? deleteSuccess,
+    TResult Function()? addSuccess,
+    TResult Function(String email)? getEmailSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -243,18 +677,27 @@ mixin _$HomeState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_GetCollectionSuccess value) getCollectionSuccess,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
+    required TResult Function(_AddSuccess value) addSuccess,
+    required TResult Function(_GetEmailSuccess value) getEmailSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_GetCollectionSuccess value)? getCollectionSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult Function(_AddSuccess value)? addSuccess,
+    TResult Function(_GetEmailSuccess value)? getEmailSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_GetCollectionSuccess value)? getCollectionSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult Function(_AddSuccess value)? addSuccess,
+    TResult Function(_GetEmailSuccess value)? getEmailSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -317,6 +760,9 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function(CollectionReference<Object?> collectionReference)
         getCollectionSuccess,
+    required TResult Function() deleteSuccess,
+    required TResult Function() addSuccess,
+    required TResult Function(String email) getEmailSuccess,
   }) {
     return initial();
   }
@@ -327,6 +773,9 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function(CollectionReference<Object?> collectionReference)?
         getCollectionSuccess,
+    TResult Function()? deleteSuccess,
+    TResult Function()? addSuccess,
+    TResult Function(String email)? getEmailSuccess,
   }) {
     return initial?.call();
   }
@@ -337,6 +786,9 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function(CollectionReference<Object?> collectionReference)?
         getCollectionSuccess,
+    TResult Function()? deleteSuccess,
+    TResult Function()? addSuccess,
+    TResult Function(String email)? getEmailSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -350,6 +802,9 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_GetCollectionSuccess value) getCollectionSuccess,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
+    required TResult Function(_AddSuccess value) addSuccess,
+    required TResult Function(_GetEmailSuccess value) getEmailSuccess,
   }) {
     return initial(this);
   }
@@ -359,6 +814,9 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_GetCollectionSuccess value)? getCollectionSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult Function(_AddSuccess value)? addSuccess,
+    TResult Function(_GetEmailSuccess value)? getEmailSuccess,
   }) {
     return initial?.call(this);
   }
@@ -368,6 +826,9 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_GetCollectionSuccess value)? getCollectionSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult Function(_AddSuccess value)? addSuccess,
+    TResult Function(_GetEmailSuccess value)? getEmailSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -451,6 +912,9 @@ class _$_GetCollectionSuccess implements _GetCollectionSuccess {
     required TResult Function() initial,
     required TResult Function(CollectionReference<Object?> collectionReference)
         getCollectionSuccess,
+    required TResult Function() deleteSuccess,
+    required TResult Function() addSuccess,
+    required TResult Function(String email) getEmailSuccess,
   }) {
     return getCollectionSuccess(collectionReference);
   }
@@ -461,6 +925,9 @@ class _$_GetCollectionSuccess implements _GetCollectionSuccess {
     TResult Function()? initial,
     TResult Function(CollectionReference<Object?> collectionReference)?
         getCollectionSuccess,
+    TResult Function()? deleteSuccess,
+    TResult Function()? addSuccess,
+    TResult Function(String email)? getEmailSuccess,
   }) {
     return getCollectionSuccess?.call(collectionReference);
   }
@@ -471,6 +938,9 @@ class _$_GetCollectionSuccess implements _GetCollectionSuccess {
     TResult Function()? initial,
     TResult Function(CollectionReference<Object?> collectionReference)?
         getCollectionSuccess,
+    TResult Function()? deleteSuccess,
+    TResult Function()? addSuccess,
+    TResult Function(String email)? getEmailSuccess,
     required TResult orElse(),
   }) {
     if (getCollectionSuccess != null) {
@@ -484,6 +954,9 @@ class _$_GetCollectionSuccess implements _GetCollectionSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_GetCollectionSuccess value) getCollectionSuccess,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
+    required TResult Function(_AddSuccess value) addSuccess,
+    required TResult Function(_GetEmailSuccess value) getEmailSuccess,
   }) {
     return getCollectionSuccess(this);
   }
@@ -493,6 +966,9 @@ class _$_GetCollectionSuccess implements _GetCollectionSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_GetCollectionSuccess value)? getCollectionSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult Function(_AddSuccess value)? addSuccess,
+    TResult Function(_GetEmailSuccess value)? getEmailSuccess,
   }) {
     return getCollectionSuccess?.call(this);
   }
@@ -502,6 +978,9 @@ class _$_GetCollectionSuccess implements _GetCollectionSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_GetCollectionSuccess value)? getCollectionSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult Function(_AddSuccess value)? addSuccess,
+    TResult Function(_GetEmailSuccess value)? getEmailSuccess,
     required TResult orElse(),
   }) {
     if (getCollectionSuccess != null) {
@@ -520,5 +999,411 @@ abstract class _GetCollectionSuccess implements HomeState {
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_GetCollectionSuccessCopyWith<_$_GetCollectionSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_DeleteSuccessCopyWith<$Res> {
+  factory _$$_DeleteSuccessCopyWith(
+          _$_DeleteSuccess value, $Res Function(_$_DeleteSuccess) then) =
+      __$$_DeleteSuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_DeleteSuccessCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
+    implements _$$_DeleteSuccessCopyWith<$Res> {
+  __$$_DeleteSuccessCopyWithImpl(
+      _$_DeleteSuccess _value, $Res Function(_$_DeleteSuccess) _then)
+      : super(_value, (v) => _then(v as _$_DeleteSuccess));
+
+  @override
+  _$_DeleteSuccess get _value => super._value as _$_DeleteSuccess;
+}
+
+/// @nodoc
+
+class _$_DeleteSuccess implements _DeleteSuccess {
+  const _$_DeleteSuccess();
+
+  @override
+  String toString() {
+    return 'HomeState.deleteSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_DeleteSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(CollectionReference<Object?> collectionReference)
+        getCollectionSuccess,
+    required TResult Function() deleteSuccess,
+    required TResult Function() addSuccess,
+    required TResult Function(String email) getEmailSuccess,
+  }) {
+    return deleteSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(CollectionReference<Object?> collectionReference)?
+        getCollectionSuccess,
+    TResult Function()? deleteSuccess,
+    TResult Function()? addSuccess,
+    TResult Function(String email)? getEmailSuccess,
+  }) {
+    return deleteSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(CollectionReference<Object?> collectionReference)?
+        getCollectionSuccess,
+    TResult Function()? deleteSuccess,
+    TResult Function()? addSuccess,
+    TResult Function(String email)? getEmailSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteSuccess != null) {
+      return deleteSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetCollectionSuccess value) getCollectionSuccess,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
+    required TResult Function(_AddSuccess value) addSuccess,
+    required TResult Function(_GetEmailSuccess value) getEmailSuccess,
+  }) {
+    return deleteSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetCollectionSuccess value)? getCollectionSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult Function(_AddSuccess value)? addSuccess,
+    TResult Function(_GetEmailSuccess value)? getEmailSuccess,
+  }) {
+    return deleteSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetCollectionSuccess value)? getCollectionSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult Function(_AddSuccess value)? addSuccess,
+    TResult Function(_GetEmailSuccess value)? getEmailSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteSuccess != null) {
+      return deleteSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteSuccess implements HomeState {
+  const factory _DeleteSuccess() = _$_DeleteSuccess;
+}
+
+/// @nodoc
+abstract class _$$_AddSuccessCopyWith<$Res> {
+  factory _$$_AddSuccessCopyWith(
+          _$_AddSuccess value, $Res Function(_$_AddSuccess) then) =
+      __$$_AddSuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_AddSuccessCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
+    implements _$$_AddSuccessCopyWith<$Res> {
+  __$$_AddSuccessCopyWithImpl(
+      _$_AddSuccess _value, $Res Function(_$_AddSuccess) _then)
+      : super(_value, (v) => _then(v as _$_AddSuccess));
+
+  @override
+  _$_AddSuccess get _value => super._value as _$_AddSuccess;
+}
+
+/// @nodoc
+
+class _$_AddSuccess implements _AddSuccess {
+  const _$_AddSuccess();
+
+  @override
+  String toString() {
+    return 'HomeState.addSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_AddSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(CollectionReference<Object?> collectionReference)
+        getCollectionSuccess,
+    required TResult Function() deleteSuccess,
+    required TResult Function() addSuccess,
+    required TResult Function(String email) getEmailSuccess,
+  }) {
+    return addSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(CollectionReference<Object?> collectionReference)?
+        getCollectionSuccess,
+    TResult Function()? deleteSuccess,
+    TResult Function()? addSuccess,
+    TResult Function(String email)? getEmailSuccess,
+  }) {
+    return addSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(CollectionReference<Object?> collectionReference)?
+        getCollectionSuccess,
+    TResult Function()? deleteSuccess,
+    TResult Function()? addSuccess,
+    TResult Function(String email)? getEmailSuccess,
+    required TResult orElse(),
+  }) {
+    if (addSuccess != null) {
+      return addSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetCollectionSuccess value) getCollectionSuccess,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
+    required TResult Function(_AddSuccess value) addSuccess,
+    required TResult Function(_GetEmailSuccess value) getEmailSuccess,
+  }) {
+    return addSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetCollectionSuccess value)? getCollectionSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult Function(_AddSuccess value)? addSuccess,
+    TResult Function(_GetEmailSuccess value)? getEmailSuccess,
+  }) {
+    return addSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetCollectionSuccess value)? getCollectionSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult Function(_AddSuccess value)? addSuccess,
+    TResult Function(_GetEmailSuccess value)? getEmailSuccess,
+    required TResult orElse(),
+  }) {
+    if (addSuccess != null) {
+      return addSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddSuccess implements HomeState {
+  const factory _AddSuccess() = _$_AddSuccess;
+}
+
+/// @nodoc
+abstract class _$$_GetEmailSuccessCopyWith<$Res> {
+  factory _$$_GetEmailSuccessCopyWith(
+          _$_GetEmailSuccess value, $Res Function(_$_GetEmailSuccess) then) =
+      __$$_GetEmailSuccessCopyWithImpl<$Res>;
+  $Res call({String email});
+}
+
+/// @nodoc
+class __$$_GetEmailSuccessCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res>
+    implements _$$_GetEmailSuccessCopyWith<$Res> {
+  __$$_GetEmailSuccessCopyWithImpl(
+      _$_GetEmailSuccess _value, $Res Function(_$_GetEmailSuccess) _then)
+      : super(_value, (v) => _then(v as _$_GetEmailSuccess));
+
+  @override
+  _$_GetEmailSuccess get _value => super._value as _$_GetEmailSuccess;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+  }) {
+    return _then(_$_GetEmailSuccess(
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GetEmailSuccess implements _GetEmailSuccess {
+  const _$_GetEmailSuccess({required this.email});
+
+  @override
+  final String email;
+
+  @override
+  String toString() {
+    return 'HomeState.getEmailSuccess(email: $email)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GetEmailSuccess &&
+            const DeepCollectionEquality().equals(other.email, email));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GetEmailSuccessCopyWith<_$_GetEmailSuccess> get copyWith =>
+      __$$_GetEmailSuccessCopyWithImpl<_$_GetEmailSuccess>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(CollectionReference<Object?> collectionReference)
+        getCollectionSuccess,
+    required TResult Function() deleteSuccess,
+    required TResult Function() addSuccess,
+    required TResult Function(String email) getEmailSuccess,
+  }) {
+    return getEmailSuccess(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(CollectionReference<Object?> collectionReference)?
+        getCollectionSuccess,
+    TResult Function()? deleteSuccess,
+    TResult Function()? addSuccess,
+    TResult Function(String email)? getEmailSuccess,
+  }) {
+    return getEmailSuccess?.call(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(CollectionReference<Object?> collectionReference)?
+        getCollectionSuccess,
+    TResult Function()? deleteSuccess,
+    TResult Function()? addSuccess,
+    TResult Function(String email)? getEmailSuccess,
+    required TResult orElse(),
+  }) {
+    if (getEmailSuccess != null) {
+      return getEmailSuccess(email);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetCollectionSuccess value) getCollectionSuccess,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
+    required TResult Function(_AddSuccess value) addSuccess,
+    required TResult Function(_GetEmailSuccess value) getEmailSuccess,
+  }) {
+    return getEmailSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetCollectionSuccess value)? getCollectionSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult Function(_AddSuccess value)? addSuccess,
+    TResult Function(_GetEmailSuccess value)? getEmailSuccess,
+  }) {
+    return getEmailSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetCollectionSuccess value)? getCollectionSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult Function(_AddSuccess value)? addSuccess,
+    TResult Function(_GetEmailSuccess value)? getEmailSuccess,
+    required TResult orElse(),
+  }) {
+    if (getEmailSuccess != null) {
+      return getEmailSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetEmailSuccess implements HomeState {
+  const factory _GetEmailSuccess({required final String email}) =
+      _$_GetEmailSuccess;
+
+  String get email => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_GetEmailSuccessCopyWith<_$_GetEmailSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }

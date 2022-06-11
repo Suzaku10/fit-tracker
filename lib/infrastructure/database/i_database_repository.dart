@@ -10,6 +10,6 @@ abstract class IDatabaseRepository {
   });
 
   Future<void> delete({
-    required Map<String, dynamic> value,
+    required String id,
   });
 }

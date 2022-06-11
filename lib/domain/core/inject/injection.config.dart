@@ -38,8 +38,8 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   await gh.lazySingletonAsync<_i9.SharedPreferences>(
       () => registerModule.sharedPreferences,
       preResolve: true);
-  gh.factory<_i10.HomeBloc>(
-      () => _i10.HomeBloc(get<_i5.IDatabaseRepository>()));
+  gh.factory<_i10.HomeBloc>(() => _i10.HomeBloc(
+      get<_i5.IDatabaseRepository>(), get<_i7.IUserRepository>()));
   gh.lazySingleton<_i11.ILocalStorage>(
       () => _i12.LocalStorage(get<_i9.SharedPreferences>()));
   gh.factory<_i13.LoginBloc>(() =>
