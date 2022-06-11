@@ -680,7 +680,7 @@ mixin _$RegisterState {
     required TResult Function(bool show) showPassword,
     required TResult Function(bool show) showRetypePassword,
     required TResult Function(bool success) navigateToLogin,
-    required TResult Function() registerSuccess,
+    required TResult Function(UserCredential credential) registerSuccess,
     required TResult Function(Exception reason) registerFailed,
   }) =>
       throw _privateConstructorUsedError;
@@ -690,7 +690,7 @@ mixin _$RegisterState {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
   }) =>
       throw _privateConstructorUsedError;
@@ -700,7 +700,7 @@ mixin _$RegisterState {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
     required TResult orElse(),
   }) =>
@@ -798,7 +798,7 @@ class _$_Initial implements _Initial {
     required TResult Function(bool show) showPassword,
     required TResult Function(bool show) showRetypePassword,
     required TResult Function(bool success) navigateToLogin,
-    required TResult Function() registerSuccess,
+    required TResult Function(UserCredential credential) registerSuccess,
     required TResult Function(Exception reason) registerFailed,
   }) {
     return initial();
@@ -811,7 +811,7 @@ class _$_Initial implements _Initial {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
   }) {
     return initial?.call();
@@ -824,7 +824,7 @@ class _$_Initial implements _Initial {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
     required TResult orElse(),
   }) {
@@ -951,7 +951,7 @@ class _$_ShowPassword implements _ShowPassword {
     required TResult Function(bool show) showPassword,
     required TResult Function(bool show) showRetypePassword,
     required TResult Function(bool success) navigateToLogin,
-    required TResult Function() registerSuccess,
+    required TResult Function(UserCredential credential) registerSuccess,
     required TResult Function(Exception reason) registerFailed,
   }) {
     return showPassword(show);
@@ -964,7 +964,7 @@ class _$_ShowPassword implements _ShowPassword {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
   }) {
     return showPassword?.call(show);
@@ -977,7 +977,7 @@ class _$_ShowPassword implements _ShowPassword {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
     required TResult orElse(),
   }) {
@@ -1110,7 +1110,7 @@ class _$_ShowRetypePassword implements _ShowRetypePassword {
     required TResult Function(bool show) showPassword,
     required TResult Function(bool show) showRetypePassword,
     required TResult Function(bool success) navigateToLogin,
-    required TResult Function() registerSuccess,
+    required TResult Function(UserCredential credential) registerSuccess,
     required TResult Function(Exception reason) registerFailed,
   }) {
     return showRetypePassword(show);
@@ -1123,7 +1123,7 @@ class _$_ShowRetypePassword implements _ShowRetypePassword {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
   }) {
     return showRetypePassword?.call(show);
@@ -1136,7 +1136,7 @@ class _$_ShowRetypePassword implements _ShowRetypePassword {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
     required TResult orElse(),
   }) {
@@ -1269,7 +1269,7 @@ class _$_NavigateToLogin implements _NavigateToLogin {
     required TResult Function(bool show) showPassword,
     required TResult Function(bool show) showRetypePassword,
     required TResult Function(bool success) navigateToLogin,
-    required TResult Function() registerSuccess,
+    required TResult Function(UserCredential credential) registerSuccess,
     required TResult Function(Exception reason) registerFailed,
   }) {
     return navigateToLogin(success);
@@ -1282,7 +1282,7 @@ class _$_NavigateToLogin implements _NavigateToLogin {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
   }) {
     return navigateToLogin?.call(success);
@@ -1295,7 +1295,7 @@ class _$_NavigateToLogin implements _NavigateToLogin {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
     required TResult orElse(),
   }) {
@@ -1364,6 +1364,7 @@ abstract class _$$_RegisterSuccessCopyWith<$Res> {
   factory _$$_RegisterSuccessCopyWith(
           _$_RegisterSuccess value, $Res Function(_$_RegisterSuccess) then) =
       __$$_RegisterSuccessCopyWithImpl<$Res>;
+  $Res call({UserCredential credential});
 }
 
 /// @nodoc
@@ -1376,26 +1377,50 @@ class __$$_RegisterSuccessCopyWithImpl<$Res>
 
   @override
   _$_RegisterSuccess get _value => super._value as _$_RegisterSuccess;
+
+  @override
+  $Res call({
+    Object? credential = freezed,
+  }) {
+    return _then(_$_RegisterSuccess(
+      credential: credential == freezed
+          ? _value.credential
+          : credential // ignore: cast_nullable_to_non_nullable
+              as UserCredential,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_RegisterSuccess implements _RegisterSuccess {
-  const _$_RegisterSuccess();
+  const _$_RegisterSuccess({required this.credential});
+
+  @override
+  final UserCredential credential;
 
   @override
   String toString() {
-    return 'RegisterState.registerSuccess()';
+    return 'RegisterState.registerSuccess(credential: $credential)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_RegisterSuccess);
+        (other.runtimeType == runtimeType &&
+            other is _$_RegisterSuccess &&
+            const DeepCollectionEquality()
+                .equals(other.credential, credential));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(credential));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_RegisterSuccessCopyWith<_$_RegisterSuccess> get copyWith =>
+      __$$_RegisterSuccessCopyWithImpl<_$_RegisterSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1404,10 +1429,10 @@ class _$_RegisterSuccess implements _RegisterSuccess {
     required TResult Function(bool show) showPassword,
     required TResult Function(bool show) showRetypePassword,
     required TResult Function(bool success) navigateToLogin,
-    required TResult Function() registerSuccess,
+    required TResult Function(UserCredential credential) registerSuccess,
     required TResult Function(Exception reason) registerFailed,
   }) {
-    return registerSuccess();
+    return registerSuccess(credential);
   }
 
   @override
@@ -1417,10 +1442,10 @@ class _$_RegisterSuccess implements _RegisterSuccess {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
   }) {
-    return registerSuccess?.call();
+    return registerSuccess?.call(credential);
   }
 
   @override
@@ -1430,12 +1455,12 @@ class _$_RegisterSuccess implements _RegisterSuccess {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
     required TResult orElse(),
   }) {
     if (registerSuccess != null) {
-      return registerSuccess();
+      return registerSuccess(credential);
     }
     return orElse();
   }
@@ -1485,7 +1510,13 @@ class _$_RegisterSuccess implements _RegisterSuccess {
 }
 
 abstract class _RegisterSuccess implements RegisterState {
-  const factory _RegisterSuccess() = _$_RegisterSuccess;
+  const factory _RegisterSuccess({required final UserCredential credential}) =
+      _$_RegisterSuccess;
+
+  UserCredential get credential => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_RegisterSuccessCopyWith<_$_RegisterSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1557,7 +1588,7 @@ class _$_RegisterFailed implements _RegisterFailed {
     required TResult Function(bool show) showPassword,
     required TResult Function(bool show) showRetypePassword,
     required TResult Function(bool success) navigateToLogin,
-    required TResult Function() registerSuccess,
+    required TResult Function(UserCredential credential) registerSuccess,
     required TResult Function(Exception reason) registerFailed,
   }) {
     return registerFailed(reason);
@@ -1570,7 +1601,7 @@ class _$_RegisterFailed implements _RegisterFailed {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
   }) {
     return registerFailed?.call(reason);
@@ -1583,7 +1614,7 @@ class _$_RegisterFailed implements _RegisterFailed {
     TResult Function(bool show)? showPassword,
     TResult Function(bool show)? showRetypePassword,
     TResult Function(bool success)? navigateToLogin,
-    TResult Function()? registerSuccess,
+    TResult Function(UserCredential credential)? registerSuccess,
     TResult Function(Exception reason)? registerFailed,
     required TResult orElse(),
   }) {

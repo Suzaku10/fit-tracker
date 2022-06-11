@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 abstract class IUserRepository {
   Future<Map<String, dynamic>> login({
     required String email,
@@ -10,4 +12,6 @@ abstract class IUserRepository {
   });
 
   Future<void> logout();
+
+  Future<User?> getCurrentUser();
 }

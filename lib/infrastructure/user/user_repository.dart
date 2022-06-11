@@ -55,4 +55,14 @@ class UserRepository implements IUserRepository {
   Future<void> logout() async {
     await _auth.signOut();
   }
+
+  @override
+  Future<User?> getCurrentUser() async {
+    try {
+      return _auth.currentUser;
+    } catch (_) {
+      print('print =>');
+      return null;
+    }
+  }
 }

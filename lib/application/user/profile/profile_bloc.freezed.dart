@@ -19,32 +19,38 @@ mixin _$ProfileEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() signOut,
+    required TResult Function() getCurrentUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? signOut,
+    TResult Function()? getCurrentUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signOut,
+    TResult Function()? getCurrentUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignOut value) signOut,
+    required TResult Function(_GetCurrentUser value) getCurrentUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_GetCurrentUser value)? getCurrentUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_GetCurrentUser value)? getCurrentUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,6 +112,7 @@ class _$_SignOut implements _SignOut {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() signOut,
+    required TResult Function() getCurrentUser,
   }) {
     return signOut();
   }
@@ -114,6 +121,7 @@ class _$_SignOut implements _SignOut {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? signOut,
+    TResult Function()? getCurrentUser,
   }) {
     return signOut?.call();
   }
@@ -122,6 +130,7 @@ class _$_SignOut implements _SignOut {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signOut,
+    TResult Function()? getCurrentUser,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -134,6 +143,7 @@ class _$_SignOut implements _SignOut {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignOut value) signOut,
+    required TResult Function(_GetCurrentUser value) getCurrentUser,
   }) {
     return signOut(this);
   }
@@ -142,6 +152,7 @@ class _$_SignOut implements _SignOut {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_GetCurrentUser value)? getCurrentUser,
   }) {
     return signOut?.call(this);
   }
@@ -150,6 +161,7 @@ class _$_SignOut implements _SignOut {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_GetCurrentUser value)? getCurrentUser,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -164,23 +176,131 @@ abstract class _SignOut implements ProfileEvent {
 }
 
 /// @nodoc
+abstract class _$$_GetCurrentUserCopyWith<$Res> {
+  factory _$$_GetCurrentUserCopyWith(
+          _$_GetCurrentUser value, $Res Function(_$_GetCurrentUser) then) =
+      __$$_GetCurrentUserCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_GetCurrentUserCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res>
+    implements _$$_GetCurrentUserCopyWith<$Res> {
+  __$$_GetCurrentUserCopyWithImpl(
+      _$_GetCurrentUser _value, $Res Function(_$_GetCurrentUser) _then)
+      : super(_value, (v) => _then(v as _$_GetCurrentUser));
+
+  @override
+  _$_GetCurrentUser get _value => super._value as _$_GetCurrentUser;
+}
+
+/// @nodoc
+
+class _$_GetCurrentUser implements _GetCurrentUser {
+  const _$_GetCurrentUser();
+
+  @override
+  String toString() {
+    return 'ProfileEvent.getCurrentUser()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_GetCurrentUser);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signOut,
+    required TResult Function() getCurrentUser,
+  }) {
+    return getCurrentUser();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signOut,
+    TResult Function()? getCurrentUser,
+  }) {
+    return getCurrentUser?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signOut,
+    TResult Function()? getCurrentUser,
+    required TResult orElse(),
+  }) {
+    if (getCurrentUser != null) {
+      return getCurrentUser();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignOut value) signOut,
+    required TResult Function(_GetCurrentUser value) getCurrentUser,
+  }) {
+    return getCurrentUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignOut value)? signOut,
+    TResult Function(_GetCurrentUser value)? getCurrentUser,
+  }) {
+    return getCurrentUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignOut value)? signOut,
+    TResult Function(_GetCurrentUser value)? getCurrentUser,
+    required TResult orElse(),
+  }) {
+    if (getCurrentUser != null) {
+      return getCurrentUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetCurrentUser implements ProfileEvent {
+  const factory _GetCurrentUser() = _$_GetCurrentUser;
+}
+
+/// @nodoc
 mixin _$ProfileState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isSuccess) signOutSuccess,
+    required TResult Function(User? user) currentUserSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isSuccess)? signOutSuccess,
+    TResult Function(User? user)? currentUserSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isSuccess)? signOutSuccess,
+    TResult Function(User? user)? currentUserSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -188,18 +308,21 @@ mixin _$ProfileState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_SignoutSuccess value) signOutSuccess,
+    required TResult Function(_CurrentUserSuccess value) currentUserSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SignoutSuccess value)? signOutSuccess,
+    TResult Function(_CurrentUserSuccess value)? currentUserSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SignoutSuccess value)? signOutSuccess,
+    TResult Function(_CurrentUserSuccess value)? currentUserSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -262,6 +385,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isSuccess) signOutSuccess,
+    required TResult Function(User? user) currentUserSuccess,
   }) {
     return initial();
   }
@@ -271,6 +395,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isSuccess)? signOutSuccess,
+    TResult Function(User? user)? currentUserSuccess,
   }) {
     return initial?.call();
   }
@@ -280,6 +405,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isSuccess)? signOutSuccess,
+    TResult Function(User? user)? currentUserSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -293,6 +419,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_SignoutSuccess value) signOutSuccess,
+    required TResult Function(_CurrentUserSuccess value) currentUserSuccess,
   }) {
     return initial(this);
   }
@@ -302,6 +429,7 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SignoutSuccess value)? signOutSuccess,
+    TResult Function(_CurrentUserSuccess value)? currentUserSuccess,
   }) {
     return initial?.call(this);
   }
@@ -311,6 +439,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SignoutSuccess value)? signOutSuccess,
+    TResult Function(_CurrentUserSuccess value)? currentUserSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -391,6 +520,7 @@ class _$_SignoutSuccess implements _SignoutSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isSuccess) signOutSuccess,
+    required TResult Function(User? user) currentUserSuccess,
   }) {
     return signOutSuccess(isSuccess);
   }
@@ -400,6 +530,7 @@ class _$_SignoutSuccess implements _SignoutSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isSuccess)? signOutSuccess,
+    TResult Function(User? user)? currentUserSuccess,
   }) {
     return signOutSuccess?.call(isSuccess);
   }
@@ -409,6 +540,7 @@ class _$_SignoutSuccess implements _SignoutSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isSuccess)? signOutSuccess,
+    TResult Function(User? user)? currentUserSuccess,
     required TResult orElse(),
   }) {
     if (signOutSuccess != null) {
@@ -422,6 +554,7 @@ class _$_SignoutSuccess implements _SignoutSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_SignoutSuccess value) signOutSuccess,
+    required TResult Function(_CurrentUserSuccess value) currentUserSuccess,
   }) {
     return signOutSuccess(this);
   }
@@ -431,6 +564,7 @@ class _$_SignoutSuccess implements _SignoutSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SignoutSuccess value)? signOutSuccess,
+    TResult Function(_CurrentUserSuccess value)? currentUserSuccess,
   }) {
     return signOutSuccess?.call(this);
   }
@@ -440,6 +574,7 @@ class _$_SignoutSuccess implements _SignoutSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SignoutSuccess value)? signOutSuccess,
+    TResult Function(_CurrentUserSuccess value)? currentUserSuccess,
     required TResult orElse(),
   }) {
     if (signOutSuccess != null) {
@@ -456,5 +591,147 @@ abstract class _SignoutSuccess implements ProfileState {
   bool get isSuccess => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_SignoutSuccessCopyWith<_$_SignoutSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_CurrentUserSuccessCopyWith<$Res> {
+  factory _$$_CurrentUserSuccessCopyWith(_$_CurrentUserSuccess value,
+          $Res Function(_$_CurrentUserSuccess) then) =
+      __$$_CurrentUserSuccessCopyWithImpl<$Res>;
+  $Res call({User? user});
+}
+
+/// @nodoc
+class __$$_CurrentUserSuccessCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res>
+    implements _$$_CurrentUserSuccessCopyWith<$Res> {
+  __$$_CurrentUserSuccessCopyWithImpl(
+      _$_CurrentUserSuccess _value, $Res Function(_$_CurrentUserSuccess) _then)
+      : super(_value, (v) => _then(v as _$_CurrentUserSuccess));
+
+  @override
+  _$_CurrentUserSuccess get _value => super._value as _$_CurrentUserSuccess;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_$_CurrentUserSuccess(
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CurrentUserSuccess implements _CurrentUserSuccess {
+  const _$_CurrentUserSuccess({required this.user});
+
+  @override
+  final User? user;
+
+  @override
+  String toString() {
+    return 'ProfileState.currentUserSuccess(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CurrentUserSuccess &&
+            const DeepCollectionEquality().equals(other.user, user));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_CurrentUserSuccessCopyWith<_$_CurrentUserSuccess> get copyWith =>
+      __$$_CurrentUserSuccessCopyWithImpl<_$_CurrentUserSuccess>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isSuccess) signOutSuccess,
+    required TResult Function(User? user) currentUserSuccess,
+  }) {
+    return currentUserSuccess(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isSuccess)? signOutSuccess,
+    TResult Function(User? user)? currentUserSuccess,
+  }) {
+    return currentUserSuccess?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isSuccess)? signOutSuccess,
+    TResult Function(User? user)? currentUserSuccess,
+    required TResult orElse(),
+  }) {
+    if (currentUserSuccess != null) {
+      return currentUserSuccess(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SignoutSuccess value) signOutSuccess,
+    required TResult Function(_CurrentUserSuccess value) currentUserSuccess,
+  }) {
+    return currentUserSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SignoutSuccess value)? signOutSuccess,
+    TResult Function(_CurrentUserSuccess value)? currentUserSuccess,
+  }) {
+    return currentUserSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SignoutSuccess value)? signOutSuccess,
+    TResult Function(_CurrentUserSuccess value)? currentUserSuccess,
+    required TResult orElse(),
+  }) {
+    if (currentUserSuccess != null) {
+      return currentUserSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CurrentUserSuccess implements ProfileState {
+  const factory _CurrentUserSuccess({required final User? user}) =
+      _$_CurrentUserSuccess;
+
+  User? get user => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_CurrentUserSuccessCopyWith<_$_CurrentUserSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }

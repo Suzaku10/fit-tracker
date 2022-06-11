@@ -30,28 +30,38 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       }, onNavigateToLogin: (e) async {
         emit(const _NavigateToLogin(success: true));
       }, onRegister: (e) async {
-        EasyLoading.show();
-        final register =
-            await _auth.register(email: e.email, password: e.password);
-        EasyLoading.dismiss();
+        if (e.retype == e.password &&
+            (e.email.isNotEmpty && e.password.isNotEmpty)) {
+          EasyLoading.show();
+          final register =
+              await _auth.register(email: e.email, password: e.password);
+          EasyLoading.dismiss();
 
-        if (register[AppConst.status] == true) {
-          _storage.setUserLogin();
-          emit(const _RegisterSuccess());
-        } else {
-          if (register.containsKey(AppConst.message)) {
-            emit(
-              _RegisterFailed(
-                reason: Exception(register[AppConst.message]),
-              ),
-            );
+          if (register[AppConst.status] == true) {
+            _storage.setUserLogin();
+            emit(_RegisterSuccess(credential: register['data']));
           } else {
-            emit(
-              _RegisterFailed(
-                reason: Exception('Something wrong'),
-              ),
-            );
+            if (register.containsKey(AppConst.message)) {
+              emit(
+                _RegisterFailed(
+                  reason: Exception(register[AppConst.message]),
+                ),
+              );
+            } else {
+              emit(
+                _RegisterFailed(
+                  reason: Exception('Something wrong'),
+                ),
+              );
+            }
           }
+        } else {
+          emit(
+            _RegisterFailed(
+              reason: Exception(
+                  'Password Tidak boleh Kosong Atau Retype Password tidak sesuai'),
+            ),
+          );
         }
       });
     });

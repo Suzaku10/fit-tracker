@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:eden_farm/infrastructure/user/i_user_repository.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -28,29 +29,33 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           emit(const _NavigateToRegister(success: true));
         },
         onLogin: (e) async {
-          EasyLoading.show();
-          final login = await _auth.login(
-            email: e.email,
-            password: e.password,
-          );
-          EasyLoading.dismiss();
-
-          if (login[AppConst.status] == true) {
-            _storage.setUserLogin();
-            emit(const _LoginSuccess());
+          if(e.email.isEmpty || e.password.isEmpty){
+            emit( _LoginFailed(reason: Exception('Email or Password empty')));
           } else {
-            if (login.containsKey(AppConst.message)) {
-              emit(
-                _LoginFailed(
-                  reason: Exception(login[AppConst.message]),
-                ),
-              );
+            EasyLoading.show();
+            final login = await _auth.login(
+              email: e.email,
+              password: e.password,
+            );
+            EasyLoading.dismiss();
+
+            if (login[AppConst.status] == true) {
+              _storage.setUserLogin();
+              emit(_LoginSuccess(credential: login['data']));
             } else {
-              emit(
-                _LoginFailed(
-                  reason: Exception('Something wrong'),
-                ),
-              );
+              if (login.containsKey(AppConst.message)) {
+                emit(
+                  _LoginFailed(
+                    reason: Exception(login[AppConst.message]),
+                  ),
+                );
+              } else {
+                emit(
+                  _LoginFailed(
+                    reason: Exception('Something wrong'),
+                  ),
+                );
+              }
             }
           }
         },

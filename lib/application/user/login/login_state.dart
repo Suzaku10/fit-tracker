@@ -12,7 +12,9 @@ class LoginState with _$LoginState {
     required bool success,
   }) = _NavigateToRegister;
 
-  const factory LoginState.loginSuccess() = _LoginSuccess;
+  const factory LoginState.loginSuccess({
+    required UserCredential credential,
+  }) = _LoginSuccess;
 
   const factory LoginState.loginFailed({
     required Exception reason,

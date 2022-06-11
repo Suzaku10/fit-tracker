@@ -16,7 +16,9 @@ class RegisterState with _$RegisterState {
     required bool success,
   }) = _NavigateToLogin;
 
-  const factory RegisterState.registerSuccess() = _RegisterSuccess;
+  const factory RegisterState.registerSuccess({
+    required UserCredential credential,
+  }) = _RegisterSuccess;
 
   const factory RegisterState.registerFailed({
     required Exception reason,
