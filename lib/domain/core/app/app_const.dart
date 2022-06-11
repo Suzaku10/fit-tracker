@@ -15,7 +15,9 @@ class AppConst {
   static const weakPassword = 'weak-password';
   static const emailAlreadyInUse = 'email-already-in-use';
 
-
   /// sharedpref key
   static const prefsUserLogin = 'is_user_login';
+
+  /// collection
+  static const collection = 'bmi';
 }
