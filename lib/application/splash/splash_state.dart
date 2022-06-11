@@ -4,5 +4,5 @@ part of 'splash_bloc.dart';
 class SplashState with _$SplashState {
   const factory SplashState.initial() = _Initial;
 
-  const factory SplashState.navigate() = _Navigate;
+  const factory SplashState.navigate({required bool isLoggedIn}) = _Navigate;
 }

@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "email_hint": MessageLookupByLibrary.simpleMessage("Masukkan email"),
         "email_label": MessageLookupByLibrary.simpleMessage("Email"),
+        "home": MessageLookupByLibrary.simpleMessage("Beranda"),
         "member_info":
             MessageLookupByLibrary.simpleMessage("Sudah memiliki akun?"),
         "non_member_info":
@@ -31,11 +32,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "password_hint":
             MessageLookupByLibrary.simpleMessage("Masukkan password"),
         "password_label": MessageLookupByLibrary.simpleMessage("Password"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "retype_password":
             MessageLookupByLibrary.simpleMessage("Ketik Ulang Password"),
         "retype_password_hint":
             MessageLookupByLibrary.simpleMessage("Ketik ulang password"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Masuk"),
+        "sign_out": MessageLookupByLibrary.simpleMessage("Keluar"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Daftar")
       };
 }

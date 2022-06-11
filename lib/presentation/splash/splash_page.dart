@@ -37,7 +37,9 @@ class _SplashPageState extends State<SplashPage> {
         ),
         listener: (context, state) => state.map(
           initial: (e) => null,
-          navigate: (e) => context.replaceRoute(const LoginRoute()),
+          navigate: (e) => e.isLoggedIn
+              ? context.replaceRoute(const MainRoute())
+              : context.replaceRoute(const LoginRoute()),
         ),
       ),
     );

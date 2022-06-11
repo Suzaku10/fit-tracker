@@ -124,7 +124,7 @@ class _RegisterPageState extends State<RegisterPage> {
             showPassword: (e) => showPassword = e.show,
             showRetypePassword: (e) =>  showReTypePassword = e.show,
             navigateToLogin: (e) => context.replaceRoute(const LoginRoute()),
-            registerSuccess: (e) => context.replaceRoute(const HomeRoute()),
+            registerSuccess: (e) => context.replaceRoute(const MainRoute()),
             registerFailed: (e) => ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(e.reason.toString()),

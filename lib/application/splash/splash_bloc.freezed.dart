@@ -167,19 +167,19 @@ mixin _$SplashState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() navigate,
+    required TResult Function(bool isLoggedIn) navigate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? navigate,
+    TResult Function(bool isLoggedIn)? navigate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? navigate,
+    TResult Function(bool isLoggedIn)? navigate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -260,7 +260,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() navigate,
+    required TResult Function(bool isLoggedIn) navigate,
   }) {
     return initial();
   }
@@ -269,7 +269,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? navigate,
+    TResult Function(bool isLoggedIn)? navigate,
   }) {
     return initial?.call();
   }
@@ -278,7 +278,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? navigate,
+    TResult Function(bool isLoggedIn)? navigate,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -328,6 +328,7 @@ abstract class _$$_NavigateCopyWith<$Res> {
   factory _$$_NavigateCopyWith(
           _$_Navigate value, $Res Function(_$_Navigate) then) =
       __$$_NavigateCopyWithImpl<$Res>;
+  $Res call({bool isLoggedIn});
 }
 
 /// @nodoc
@@ -339,54 +340,78 @@ class __$$_NavigateCopyWithImpl<$Res> extends _$SplashStateCopyWithImpl<$Res>
 
   @override
   _$_Navigate get _value => super._value as _$_Navigate;
+
+  @override
+  $Res call({
+    Object? isLoggedIn = freezed,
+  }) {
+    return _then(_$_Navigate(
+      isLoggedIn: isLoggedIn == freezed
+          ? _value.isLoggedIn
+          : isLoggedIn // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Navigate implements _Navigate {
-  const _$_Navigate();
+  const _$_Navigate({required this.isLoggedIn});
+
+  @override
+  final bool isLoggedIn;
 
   @override
   String toString() {
-    return 'SplashState.navigate()';
+    return 'SplashState.navigate(isLoggedIn: $isLoggedIn)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Navigate);
+        (other.runtimeType == runtimeType &&
+            other is _$_Navigate &&
+            const DeepCollectionEquality()
+                .equals(other.isLoggedIn, isLoggedIn));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isLoggedIn));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_NavigateCopyWith<_$_Navigate> get copyWith =>
+      __$$_NavigateCopyWithImpl<_$_Navigate>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() navigate,
+    required TResult Function(bool isLoggedIn) navigate,
   }) {
-    return navigate();
+    return navigate(isLoggedIn);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? navigate,
+    TResult Function(bool isLoggedIn)? navigate,
   }) {
-    return navigate?.call();
+    return navigate?.call(isLoggedIn);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? navigate,
+    TResult Function(bool isLoggedIn)? navigate,
     required TResult orElse(),
   }) {
     if (navigate != null) {
-      return navigate();
+      return navigate(isLoggedIn);
     }
     return orElse();
   }
@@ -424,5 +449,10 @@ class _$_Navigate implements _Navigate {
 }
 
 abstract class _Navigate implements SplashState {
-  const factory _Navigate() = _$_Navigate;
+  const factory _Navigate({required final bool isLoggedIn}) = _$_Navigate;
+
+  bool get isLoggedIn => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_NavigateCopyWith<_$_Navigate> get copyWith =>
+      throw _privateConstructorUsedError;
 }

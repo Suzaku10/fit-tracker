@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
             showPassword: (e) => showPassword = e.show,
             navigateToRegister: (e) =>
                 context.replaceRoute(const RegisterRoute()),
-            loginSuccess: (e) => context.replaceRoute(const RegisterRoute()),
+            loginSuccess: (e) => context.replaceRoute(const MainRoute()),
             loginFailed: (e) => ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(e.reason.toString()),

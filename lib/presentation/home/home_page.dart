@@ -10,6 +10,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const SafeArea(
+      child: Scaffold(
+        body: Center(
+          child: InkWell(child: Text('hello')),
+        ),
+      ),
+    );
   }
 }
+

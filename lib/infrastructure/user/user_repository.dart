@@ -1,3 +1,4 @@
+import 'package:eden_farm/infrastructure/storage/i_local_storage.dart';
 import 'package:eden_farm/infrastructure/user/i_user_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';

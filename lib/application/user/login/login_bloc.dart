@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../domain/core/app/app_const.dart';
+import '../../../infrastructure/storage/i_local_storage.dart';
 
 part 'login_event.dart';
 
@@ -15,8 +16,9 @@ part 'login_bloc.freezed.dart';
 @injectable
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final IUserRepository _auth;
+  final ILocalStorage _storage;
 
-  LoginBloc(this._auth) : super(const _Initial()) {
+  LoginBloc(this._auth, this._storage) : super(const _Initial()) {
     on<LoginEvent>((event, emit) async {
       await event.map(
         onShowPassword: (e) async {
@@ -34,6 +36,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           EasyLoading.dismiss();
 
           if (login[AppConst.status] == true) {
+            _storage.setUserLogin();
             emit(const _LoginSuccess());
           } else {
             if (login.containsKey(AppConst.message)) {

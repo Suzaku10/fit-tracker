@@ -8,5 +8,8 @@
   "password_label": "Password",
   "password_hint": "Masukkan password",
   "retype_password": "Ketik Ulang Password",
-  "retype_password_hint": "Ketik ulang password"
+  "retype_password_hint": "Ketik ulang password",
+  "sign_out": "Keluar",
+  "home": "Beranda",
+  "profile": "Profile"
 }

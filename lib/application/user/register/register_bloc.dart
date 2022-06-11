@@ -8,6 +8,8 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../infrastructure/storage/i_local_storage.dart';
+
 part 'register_event.dart';
 
 part 'register_state.dart';
@@ -17,8 +19,9 @@ part 'register_bloc.freezed.dart';
 @injectable
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   final IUserRepository _auth;
+  final ILocalStorage _storage;
 
-  RegisterBloc(this._auth) : super(const _Initial()) {
+  RegisterBloc(this._auth, this._storage) : super(const _Initial()) {
     on<RegisterEvent>((event, emit) async {
       await event.map(onShowPassword: (e) async {
         emit(_ShowPassword(show: !e.show));
@@ -33,6 +36,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         EasyLoading.dismiss();
 
         if (register[AppConst.status] == true) {
+          _storage.setUserLogin();
           emit(const _RegisterSuccess());
         } else {
           if (register.containsKey(AppConst.message)) {

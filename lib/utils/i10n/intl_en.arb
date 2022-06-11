@@ -8,5 +8,8 @@
   "password_label": "Password",
   "password_hint": "Type your password",
   "retype_password": "Retype Password",
-  "retype_password_hint": "Retype your password"
+  "retype_password_hint": "Retype your password",
+  "sign_out": "Sign Out",
+  "home": "Home",
+  "profile": "Profile"
 }
