@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a id locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,24 +18,24 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'id';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "email_hint": MessageLookupByLibrary.simpleMessage("Type your email"),
+        "email_hint": MessageLookupByLibrary.simpleMessage("Masukkan email"),
         "email_label": MessageLookupByLibrary.simpleMessage("Email"),
         "member_info":
-            MessageLookupByLibrary.simpleMessage("Already have account?"),
+            MessageLookupByLibrary.simpleMessage("Sudah memiliki akun?"),
         "non_member_info":
-            MessageLookupByLibrary.simpleMessage("Haven\'t have account?"),
+            MessageLookupByLibrary.simpleMessage("Belum memiliki akun?"),
         "password_hint":
-            MessageLookupByLibrary.simpleMessage("Type your password"),
+            MessageLookupByLibrary.simpleMessage("Masukkan password"),
         "password_label": MessageLookupByLibrary.simpleMessage("Password"),
         "retype_password":
-            MessageLookupByLibrary.simpleMessage("Retype Password"),
+            MessageLookupByLibrary.simpleMessage("Ketik Ulang Password"),
         "retype_password_hint":
-            MessageLookupByLibrary.simpleMessage("Retype your password"),
-        "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
-        "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up")
+            MessageLookupByLibrary.simpleMessage("Ketik ulang password"),
+        "sign_in": MessageLookupByLibrary.simpleMessage("Masuk"),
+        "sign_up": MessageLookupByLibrary.simpleMessage("Daftar")
       };
 }

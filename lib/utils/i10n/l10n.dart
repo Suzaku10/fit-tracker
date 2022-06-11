@@ -49,6 +49,106 @@ class I10n {
   static I10n? maybeOf(BuildContext context) {
     return Localizations.of<I10n>(context, I10n);
   }
+
+  /// `Haven't have account?`
+  String get non_member_info {
+    return Intl.message(
+      'Haven\'t have account?',
+      name: 'non_member_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have account?`
+  String get member_info {
+    return Intl.message(
+      'Already have account?',
+      name: 'member_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get sign_up {
+    return Intl.message(
+      'Sign Up',
+      name: 'sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get sign_in {
+    return Intl.message(
+      'Sign In',
+      name: 'sign_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email_label {
+    return Intl.message(
+      'Email',
+      name: 'email_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type your email`
+  String get email_hint {
+    return Intl.message(
+      'Type your email',
+      name: 'email_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password_label {
+    return Intl.message(
+      'Password',
+      name: 'password_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type your password`
+  String get password_hint {
+    return Intl.message(
+      'Type your password',
+      name: 'password_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retype Password`
+  String get retype_password {
+    return Intl.message(
+      'Retype Password',
+      name: 'retype_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retype your password`
+  String get retype_password_hint {
+    return Intl.message(
+      'Retype your password',
+      name: 'retype_password_hint',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<I10n> {
@@ -57,6 +157,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<I10n> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'id'),
     ];
   }
 
