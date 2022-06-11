@@ -4,14 +4,14 @@ Eden Farm Test
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Getting Started (Requirement)
+Flutter 3.0.1
+Dart version 2.17.1
+How To Build :
+Just Provide for Android Studio :
 
-A few resources to get you started if this is your first Flutter project:
+For run : use flutter run --release --flavor prod
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Build prod version : flutter build apk --split-per-abi --flavor prod
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# fit-tracker
+Build dev version : flutter build apk --split-per-abi --flavor dev
