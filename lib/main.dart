@@ -2,13 +2,16 @@ import 'package:eden_farm/domain/core/app/app_const.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:injectable/injectable.dart';
 
 import 'domain/core/app/app_router/app_router.gr.dart';
+import 'domain/core/inject/injection.dart';
 import 'firebase_options.dart';
 import 'utils/i10n/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  configureInjection(Environment.prod);
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

@@ -6,6 +6,7 @@ import 'package:eden_farm/presentation/component/app_text_field.dart';
 import 'package:eden_farm/utils/i10n/l10n.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../domain/core/app/app_style.dart';
 
@@ -92,7 +93,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 widthFactor: double.infinity,
                 child: AppButton.normal(
                   I10n.current.sign_up,
-                  onPressed: () => print('hello'),
+                  onPressed: () async => registerUser(),
                 ),
               )
             ],
@@ -103,4 +104,25 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   void _replaceToLogin() => context.replaceRoute(const LoginRoute());
+
+  Future<void> registerUser() async {
+    try {
+      UserCredential userCredential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: _userIDController.text,
+        password: _passwordController.text,
+      );
+      print('print => $userCredential');
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Password terlalu lemah")));
+      } else if (e.code == 'email-already-in-use') {
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Email sudah digunakan")));
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
 }

@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                         TextSpan(text: I10n.current.non_member_info),
                         const TextSpan(text: " "),
                         TextSpan(
-                          text: I10n.current.sign_in,
+                          text: I10n.current.sign_up,
                           style: AppStyle.bold12red,
                           recognizer: TapGestureRecognizer()
                             ..onTap = () => _replaceToRegister(),
